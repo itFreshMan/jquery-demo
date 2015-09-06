@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基础DOM和CSS操作</title>
+    <script type="text/javascript" src=".\resources\js\jquery\jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".\resources\css\style.css"/>
+    <script type="text/javascript">
+        $(function(){
+//            $('div').html('<em>你好啊</em>');
+//            $('div').text('<em>你好啊</em>');
+
+//            $('input').val(['女','编程']);
+
+          /*  $('div').attr({
+                'title':'我是域名',
+                'data':'123'
+            });*/
+           /* $('div').attr('title',function(index,value){
+               return  '原来的值：'+value+",现在的值：我是"+(index+1)+"号域名";
+            });*/
+
+//            alert($('div').css('color'));
+//            $('div').css('color','#FF0000');
+         //   var box =  $('div[title=aaa]').css(['width','color','height']);
+//          var box =  $('div[title=aaa]').css('height');
+/*
+            $.each(box,function(attr,value){
+                console.info(attr+":"+value);
+            });*/
+//            $('div[title=aaa]').addClass('red');
+//            $('div').toggleClass('red');
+
+          /*  var count = 0;
+            $('div').click(function(){
+                $(this).toggleClass('red size',count++ % 3 == 0);
+            });*/
+          /*  $('div').click(function(){
+                $(this).toggleClass(function(){
+                    if( $(this).hasClass('red')){
+                        $(this).removeClass('red');
+                        return 'green';
+                    }else{
+                        $(this).removeClass('green');
+                        return 'red';
+                    }
+                });
+            });*/
+            $('div').width('500');
+        });
+    </script>
+</head>
+<body>
+  <!--
+    <div >
+        <strong>baidu.com</strong>
+    </div>
+    <input type="radio" value="男"> 男
+    <input type="radio" value="女"> 女
+
+    <input type="checkbox" value="编程"> 编程
+    -->
+  <div title="aaa" >
+      <strong>www.baidu.com</strong>
+  </div>
+
+  <div title="bbb">
+      <strong>www.baidu.com</strong>
+  </div>
+</body>
+</html>
+

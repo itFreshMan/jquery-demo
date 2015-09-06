@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>过滤选择器</title>
+    <script type="text/javascript" src=".\resources\js\jquery\jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+//            $('li:first').css('background','#ccc');
+//            $('li:last').css('background','red');
+//            $('ul:last li :first').css('background','#ccc');
+//            $('li:not(.red)').css('background','#ccc');
+//            $('li:even').css('background','#ccc'); //偶数
+//            $('li:odd').css('background','#ccc'); //奇数
+//            $('li:eq(2)').css('background','#ccc'); // 0,1,2开始
+//            $('li:gt(2)').css('background','#ccc'); //  >2
+            $('li:lt(2)').css('background','#ccc'); //  <2
+//            $('li:eq(-2)').css('background','#ccc'); // 从最后一个往前：-1，-2，-3
+
+
+            //header
+            $('h3:header').css('background','#ccc');
+
+            $('input')[0].focus( );
+            $(':focus').css('background','#ccc');
+
+
+//            $('div:contains("6")').css('background','#ccc');
+            $('div:empty').css('background','#ccc').css('height','20px');
+        });
+    </script>
+</head>
+<body>
+    <div>ycku.com</div>
+    <div>yc60.com</div>
+    <div></div>
+    <div></div>
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li class="red">列表3</li>
+        <li>列表4</li>
+        <li>列表5</li>
+        <li>列表6</li>
+    </ul>
+    <div>
+        <h3>我是标题</h3>
+    </div>
+
+    <input>
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <li>列表4</li>
+        <li>列表5</li>
+        <li>列表6</li>
+    </ul>
+</body>
+</html>
+
