@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <script type="text/javascript" src=".\resources\js\jquery\jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".\resources\css\style.css"/>
+    <script type="text/javascript">
+        $(function(){
+               $('input').bind('click',function(e){
+                   e.stopPropagation();
+                  alert('input');
+               });
+
+            $('div').bind('click',function(e){
+                alert('div');
+            });
+
+            $(document).bind('click',function(e){
+                alert('document');
+            });
+
+            $('a').click(function(e){
+                e.preventDefault();
+                alert('链接');
+            });
+        });
+    </script>
+</head>
+<body>
+<div style="height: 200px;width: 200px;background: #ccc;">
+    <input type="button" value="按钮"/>
+</div>
+<a href="http://www.baidu.com">baitu.com</a>
+</body>
+</html>
+

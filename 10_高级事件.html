@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>高级事件</title>
+    <script type="text/javascript" src=".\resources\js\jquery\jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".\resources\css\style.css"/>
+    <script type="text/javascript">
+        $(function(){
+          /*  $('input').click(function () {
+                alert('我的第一次点击来自模拟！');
+            });
+
+            $('input').trigger('click');
+            $('input').click(function (e,data1,data2) {
+                alert(data1+'|'+data2);
+            });
+
+            $('input').trigger('click',['hello','213']);
+
+            $('input').trigger('click',['hello','213']);
+
+
+            $('input').on('click',function(){
+               alert('替代bind');
+            });
+
+           $('#box').on('click','input',function(){
+                alert('替代delegate');
+           // $(this).clone().appendTo('#box');
+           });
+
+            $('input').one('click',function(){
+                alert('替代bind');
+            });
+           */
+
+            $('#box').one('click','input',function(){
+                alert('替代delegate');
+                // $(this).clone().appendTo('#box');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box" style="background: #ccc;height: 200px;">
+        <input type="button" value="点我"/>
+    </div>
+</body>
+</html>
+
