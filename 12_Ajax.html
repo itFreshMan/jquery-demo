@@ -7,12 +7,88 @@
     <link rel="stylesheet" type="text/css"  href=".\resources\css\style.css"/>
     <script type="text/javascript">
         $(function(){
-           $('#box').load('01_initValue.html');
+         /*
+            $('input').click(function(){
+                $('#box').load('01_initValue.html');
+            })
+
+             $('input').click(function(){
+                $('#box').load('01_initValue.html',{},function(response,status,xhr){
+                        alert(response+':'+status+':'+xhr);
+                });
+            })
+
+            $('input').click(function(){
+                $('#box').load('01_initValue.html',{},function(response,status,xhr){
+                    console.info(response);
+                    console.info(status);
+                    console.info(xhr);
+                });
+            })
+          */
+
+            $('.loading').ajaxStart(function(){
+               $(this).show();
+            }).ajaxStop(function(){
+                $(this).hide();
+            });
+            $('input[type=button]').click(function(){
+           /*     $.ajax({
+                    url:'01_initValue.html2',
+                    type:'POST',
+                    data:$('form').serialize(),
+                    success:function(response,status,xhr){
+                        $('#box').html(response);
+                    },
+                    error:function(xhr,errorText,errorType){
+                        console.log(xhr);
+                        console.log(errorText);
+                        console.log(errorType);
+
+                    }
+                });*/
+
+                $.post({
+                    url:'01_initValue.html2',
+                    type:'POST',
+                    data:$('form').serialize(),
+                    success:function(response,status,xhr){
+                        $('#box').html(response);
+                    },
+                    error:function(xhr,errorText,errorType){
+                        console.log(xhr);
+                        console.log(errorText);
+                        console.log(errorType);
+
+                    }
+                });
+
+            });
         });
     </script>
+
+    <style>
+        .loading{
+            display:none;
+            color: #ff0000;
+        }
+
+    </style>
 </head>
 <body>
-    <div id="box"></div>
+<!--
+    <input type="button" value="点击"/>
+-->
+    <form>
+        用户名:<input type="text" name="name">
+        邮箱:<input type="text" name="email">
+        <input type="radio" value="男">男
+        <input type="radio" value="女">女
+        <input type="button" value="提交"/>
+    </form>
+    <span class="loading">正在努力加载中...</span>
+
+<div id="box"></div>
 </body>
 </html>
 
